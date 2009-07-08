@@ -1,0 +1,189 @@
+:url: http://api.eve-online.com
+:valid_uris: 
+- :uri: /account/Characters.xml.aspx
+  :required: 
+    - apiKey
+    - userID
+- :uri: /char/AccountBalance.xml.aspx
+  :required: 
+    - apiKey
+    - userID
+    - characterID
+- :uri: /char/AssetList.xml.aspx
+  :required: 
+    - apiKey
+    - userID
+    - characterID
+- :uri: /char/CharacterSheet.xml.aspx
+  :required: 
+    - apiKey
+    - userID
+    - characterID
+- :uri: /char/FacWarStats.xml.aspx
+  :required: 
+    - apiKey
+    - userID
+    - characterID
+- :uri: /char/IndustryJobs.xml.aspx
+  :required: 
+    - apiKey
+    - userID
+    - characterID
+- :uri: /char/Killlog.xml.aspx
+  :required: 
+    - apiKey
+    - userID
+    - characterID
+- :uri: /char/MarketOrders.xml.aspx
+  :required: 
+    - apiKey
+    - userID
+    - characterID
+- :uri: /char/Medals.xml.aspx
+  :required: 
+    - apiKey
+    - userID
+    - characterID
+- :uri: /char/SkillInTraining.xml.aspx
+  :required: 
+    - apiKey
+    - userID
+    - characterID
+- :uri: /char/SkillQueue.xml.aspx
+  :required: 
+    - apiKey
+    - userID
+    - characterID
+- :uri: /char/Standings.xml.aspx
+  :required: 
+    - apiKey
+    - userID
+    - characterID
+- :uri: /char/WalletJournal.xml.aspx
+  :required: 
+    - apiKey
+    - userID
+    - characterID
+    - accountKey
+- :uri: /char/WalletTransactions.xml.aspx
+  :required: 
+    - apiKey
+    - userID
+    - characterID
+    - accountKey
+- :uri: /char/AccountBalance.xml.aspx
+  :required: 
+    - apiKey
+    - userID
+    - characterID
+- :uri: /char/AssetList.xml.aspx
+  :required: 
+    - apiKey
+    - userID
+    - characterID
+- :uri: /char/ContainerLog.xml.aspx
+  :required: 
+    - apiKey
+    - userID
+    - characterID
+- :uri: /char/CorporationSheet.xml.aspx
+  :required: 
+    - apiKey
+    - userID
+    - characterID
+- :uri: /char/FacWarStats.xml.aspx
+  :required: 
+    - apiKey
+    - userID
+    - characterID
+- :uri: /char/IndustryJobs.xml.aspx
+  :required: 
+    - apiKey
+    - userID
+    - characterID
+- :uri: /char/Killlog.xml.aspx
+  :required: 
+    - apiKey
+    - userID
+    - characterID
+- :uri: /char/MarketOrders.xml.aspx
+  :required: 
+    - apiKey
+    - userID
+    - characterID
+- :uri: /char/Medals.xml.aspx
+  :required: 
+    - apiKey
+    - userID
+    - characterID
+- :uri: /char/MemberMedals.xml.aspx
+  :required: 
+    - apiKey
+    - userID
+    - characterID
+- :uri: /char/MemberSecurity.xml.aspx
+  :required: 
+    - apiKey
+    - userID
+    - characterID
+- :uri: /char/MemberSecurityLog.xml.aspx
+  :required: 
+    - apiKey
+    - userID
+    - characterID
+- :uri: /char/MemberTracking.xml.aspx
+  :required: 
+    - apiKey
+    - userID
+    - characterID
+- :uri: /char/StarbaseList.xml.aspx
+  :required: 
+    - apiKey
+    - userID
+    - characterID
+    - itemID
+- :uri: /char/Shareholders.xml.aspx
+  :required: 
+    - apiKey
+    - userID
+    - characterID
+- :uri: /char/Standings.xml.aspx
+  :required: 
+    - apiKey
+    - userID
+    - characterID
+- :uri: /char/Titles.xml.aspx
+  :required: 
+    - apiKey
+    - userID
+    - characterID
+- :uri: /char/WalletJournal.xml.aspx
+  :required: 
+    - apiKey
+    - userID
+    - characterID
+    - accountKey
+- :uri: /char/WalletTransactions.xml.aspx
+  :required: 
+    - apiKey
+    - userID
+    - characterID
+    - accountKey
+- :uri: /eve/AllianceList.xml.aspx
+- :uri: /eve/CertificateTree.xml.aspx
+- :uri: /eve/ConquerableStationList.xml.aspx
+- :uri: /eve/ErrorList.xml.aspx
+- :uri: /eve/FacWarTopStats.xml.aspx
+- :uri: /eve/CharacterName.xml.aspx
+  :required:
+    - names
+- :uri: /eve/CharacterID.xml.aspx
+  :required:
+    - names
+- :uri: /eve/RefTypes.xml.aspx
+- :uri: /eve/SkillTree.xml.aspx
+- :uri: /map/FacWarSystems.xml.aspx
+- :uri: /map/Jumps.xml.aspx
+- :uri: /map/Kills.xml.aspx
+- :uri: /map/Sovereignty.xml.aspx
+- :uri: /server/ServerStatus.xml.aspx
