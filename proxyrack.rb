@@ -1,6 +1,7 @@
 require 'rubygems'
 require 'yaml'
 require 'curb'
+require 'builder'
 require 'rack/lib/rack'
 require 'rack/lib/rack/cache'
 
@@ -19,13 +20,22 @@ class ProxyRack
     # check for valid uri query
     if check_uri( uri, params )
       data = proxy_request(env)
-      expires = (Time.now + 43200).utc.rfc2822
-      
+      headers.merge!('Expires' => (Time.now + 3600).utc.rfc2822)
+      headers.merge!('Content-Length' => data.length.to_s)
+
+      puts "DATA => #{data.length.to_s}"
       # return an HTTP 200 and proxy the request with a cache header
-      [200, headers.merge('Expires' => expires), data]
+      [200, headers, data]
     else
       # return an HTTP 400 error if request isn't valid
-      [400, {'Content-Type' => 'text/xml'}, '<error>Bad Request</error>']
+      builder = Builder::XmlMarkup.new
+      error = builder.error do |b| 
+                b.message('Bad Request')
+                b.request( env['PATH_INFO'] )
+                b.query( env['QUERY_STRING'] ) unless env['QUERY_STRING'].nil?
+              end
+              
+      [400, {'Content-Type' => 'text/xml'}, error]
     end
   end
   
@@ -36,8 +46,9 @@ class ProxyRack
       unless u[:required].nil?
         # take the intersection of the required params and submitted ones
         p = u[:required] - params
+        
         # p should be empty if the required params are set
-        return false if p.empty?
+        return false unless p.empty?
       end
 
     end
@@ -63,6 +74,7 @@ app = Rack::Builder.new {
     :verbose     => true,
     :metastore   => "file:cache/meta",
     :entitystore => "file:cache/body" 
+  use Rack::Lint
   run ProxyRack.new
 }
 
