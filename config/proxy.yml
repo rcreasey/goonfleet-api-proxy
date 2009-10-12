@@ -2,172 +2,177 @@
 :valid_uris: 
 - :uri: /account/Characters.xml.aspx
   :required: 
-    - apiKey
-    - userID
+    - apikey
+    - userid
 - :uri: /char/AccountBalance.xml.aspx
   :required: 
-    - apiKey
-    - userID
-    - characterID
+    - apikey
+    - userid
+    - characterid
 - :uri: /char/AssetList.xml.aspx
   :required: 
-    - apiKey
-    - userID
-    - characterID
+    - apikey
+    - userid
+    - characterid
 - :uri: /char/CharacterSheet.xml.aspx
   :required: 
-    - apiKey
-    - userID
-    - characterID
+    - apikey
+    - userid
+    - characterid
 - :uri: /char/FacWarStats.xml.aspx
   :required: 
-    - apiKey
-    - userID
-    - characterID
+    - apikey
+    - userid
+    - characterid
 - :uri: /char/IndustryJobs.xml.aspx
   :required: 
-    - apiKey
-    - userID
-    - characterID
+    - apikey
+    - userid
+    - characterid
 - :uri: /char/Killlog.xml.aspx
   :required: 
-    - apiKey
-    - userID
-    - characterID
+    - apikey
+    - userid
+    - characterid
 - :uri: /char/MarketOrders.xml.aspx
   :required: 
-    - apiKey
-    - userID
-    - characterID
+    - apikey
+    - userid
+    - characterid
 - :uri: /char/Medals.xml.aspx
   :required: 
-    - apiKey
-    - userID
-    - characterID
+    - apikey
+    - userid
+    - characterid
 - :uri: /char/SkillInTraining.xml.aspx
   :required: 
-    - apiKey
-    - userID
-    - characterID
+    - apikey
+    - userid
+    - characterid
 - :uri: /char/SkillQueue.xml.aspx
   :required: 
-    - apiKey
-    - userID
-    - characterID
+    - apikey
+    - userid
+    - characterid
 - :uri: /char/Standings.xml.aspx
   :required: 
-    - apiKey
-    - userID
-    - characterID
+    - apikey
+    - userid
+    - characterid
 - :uri: /char/WalletJournal.xml.aspx
   :required: 
-    - apiKey
-    - userID
-    - characterID
+    - apikey
+    - userid
+    - characterid
     - accountKey
 - :uri: /char/WalletTransactions.xml.aspx
   :required: 
-    - apiKey
-    - userID
-    - characterID
+    - apikey
+    - userid
+    - characterid
     - accountKey
-- :uri: /char/AccountBalance.xml.aspx
+- :uri: /corp/AccountBalance.xml.aspx
   :required: 
-    - apiKey
-    - userID
-    - characterID
-- :uri: /char/AssetList.xml.aspx
+    - apikey
+    - userid
+    - characterid
+- :uri: /corp/AssetList.xml.aspx
   :required: 
-    - apiKey
-    - userID
-    - characterID
-- :uri: /char/ContainerLog.xml.aspx
+    - apikey
+    - userid
+    - characterid
+- :uri: /corp/ContainerLog.xml.aspx
   :required: 
-    - apiKey
-    - userID
-    - characterID
-- :uri: /char/CorporationSheet.xml.aspx
+    - apikey
+    - userid
+    - characterid
+- :uri: /corp/CorporationSheet.xml.aspx
   :required: 
-    - apiKey
-    - userID
-    - characterID
-- :uri: /char/FacWarStats.xml.aspx
+    - apikey
+    - userid
+    - characterid
+- :uri: /corp/FacWarStats.xml.aspx
   :required: 
-    - apiKey
-    - userID
-    - characterID
-- :uri: /char/IndustryJobs.xml.aspx
+    - apikey
+    - userid
+    - characterid
+- :uri: /corp/IndustryJobs.xml.aspx
   :required: 
-    - apiKey
-    - userID
-    - characterID
-- :uri: /char/Killlog.xml.aspx
+    - apikey
+    - userid
+    - characterid
+- :uri: /corp/Killlog.xml.aspx
   :required: 
-    - apiKey
-    - userID
-    - characterID
-- :uri: /char/MarketOrders.xml.aspx
+    - apikey
+    - userid
+    - characterid
+- :uri: /corp/MarketOrders.xml.aspx
   :required: 
-    - apiKey
-    - userID
-    - characterID
-- :uri: /char/Medals.xml.aspx
+    - apikey
+    - userid
+    - characterid
+- :uri: /corp/Medals.xml.aspx
   :required: 
-    - apiKey
-    - userID
-    - characterID
-- :uri: /char/MemberMedals.xml.aspx
+    - apikey
+    - userid
+    - characterid
+- :uri: /corp/MemberMedals.xml.aspx
   :required: 
-    - apiKey
-    - userID
-    - characterID
-- :uri: /char/MemberSecurity.xml.aspx
+    - apikey
+    - userid
+    - characterid
+- :uri: /corp/MemberSecurity.xml.aspx
   :required: 
-    - apiKey
-    - userID
-    - characterID
-- :uri: /char/MemberSecurityLog.xml.aspx
+    - apikey
+    - userid
+    - characterid
+- :uri: /corp/MemberSecurityLog.xml.aspx
   :required: 
-    - apiKey
-    - userID
-    - characterID
-- :uri: /char/MemberTracking.xml.aspx
+    - apikey
+    - userid
+    - characterid
+- :uri: /corp/MemberTracking.xml.aspx
   :required: 
-    - apiKey
-    - userID
-    - characterID
-- :uri: /char/StarbaseList.xml.aspx
+    - apikey
+    - userid
+    - characterid
+- :uri: /corp/StarbaseDetail.xml.aspx
   :required: 
-    - apiKey
-    - userID
-    - characterID
-    - itemID
-- :uri: /char/Shareholders.xml.aspx
+    - apikey
+    - userid
+    - characterid
+    - itemid
+- :uri: /corp/StarbaseList.xml.aspx
   :required: 
-    - apiKey
-    - userID
-    - characterID
-- :uri: /char/Standings.xml.aspx
+    - apikey
+    - userid
+    - characterid
+- :uri: /corp/Shareholders.xml.aspx
   :required: 
-    - apiKey
-    - userID
-    - characterID
-- :uri: /char/Titles.xml.aspx
+    - apikey
+    - userid
+    - characterid
+- :uri: /corp/Standings.xml.aspx
   :required: 
-    - apiKey
-    - userID
-    - characterID
-- :uri: /char/WalletJournal.xml.aspx
+    - apikey
+    - userid
+    - characterid
+- :uri: /corp/Titles.xml.aspx
   :required: 
-    - apiKey
-    - userID
-    - characterID
+    - apikey
+    - userid
+    - characterid
+- :uri: /corp/WalletJournal.xml.aspx
+  :required: 
+    - apikey
+    - userid
+    - characterid
     - accountKey
-- :uri: /char/WalletTransactions.xml.aspx
+- :uri: /corp/WalletTransactions.xml.aspx
   :required: 
-    - apiKey
-    - userID
-    - characterID
+    - apikey
+    - userid
+    - characterid
     - accountKey
 - :uri: /eve/AllianceList.xml.aspx
 - :uri: /eve/CertificateTree.xml.aspx
