@@ -1,3 +1,5 @@
 .DS_Store
 cache/meta/*
 cache/base/*
+test/test_cache
+test_cache

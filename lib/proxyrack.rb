@@ -7,12 +7,12 @@ require 'rack/cache'
 
 class ProxyRack
   def initialize
-    @proxy = YAML::load(File.open('config/proxy.yml'))
+    @proxy = YAML::load(File.open("#{File.dirname(__FILE__)}/config/proxy.yml"))
   end
   
   def call(env)
     # set local parameters
-    headers   = YAML::load(File.open('config/headers.yml'))
+    headers   = YAML::load(File.open("#{File.dirname(__FILE__)}/config/headers.yml"))
     uri       = env['PATH_INFO']
     params    = env['QUERY_STRING'].split('&').collect {|k| k.split('=').first.downcase} unless env['QUERY_STRING'].nil?
     params    ||= []  # set empty params if the query string was empty
@@ -42,14 +42,14 @@ class ProxyRack
     # lookup the URI and see if it's a permitted request
     if u = @proxy[:valid_uris].find {|h| h.has_value?(uri)}
       # check for required params to the URI
-      #unless u[:required].nil?
-      #  # take the intersection of the required params and submitted ones
-      #  p = u[:required] - params
-      #  
-      #  # p should be empty if the required params are set
-      #  return false unless p.empty?
-      #end
-
+      unless u[:required].nil?
+       # take the intersection of the required params and submitted ones
+       p = u[:required] - params
+       
+       # p should be empty if the required params are set
+       return false unless p.empty?
+      end
+      
     end
     
     # if the uri was found, it should have returned a hash
