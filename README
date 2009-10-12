@@ -1,1 +1,15 @@
 GoonFleet EVE API Proxy
+=======================
+
+Required Gems:
+ - yaml
+ - curb
+ - builder
+ - rack
+ - rack-cache
+ - memcache-client
+ 
+Configuration:
+  config/server.yml  : Sets the IP and port of the daemon
+  config/proxy.yml   : Contains the list of valid URIs and required parameters
+  config/headers.yml : Contains the default headers to be sent with all proxy requests
