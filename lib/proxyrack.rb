@@ -2,6 +2,7 @@ require 'rubygems'
 require 'yaml'
 require 'curb'
 require 'builder'
+require 'hpricot'
 require 'rack'
 require 'rack/cache'
 
@@ -20,7 +21,8 @@ class ProxyRack
     # check for valid uri query
     if check_uri( uri, params )
       data = proxy_request(env)
-      headers.merge!('Expires' => (Time.now + 3600).utc.rfc2822)
+      # compute the expiration time based off of the original request
+      headers.merge!('Expires' => Time.parse( $1 ).rfc2822) if data =~ /<cachedUntil>(.*)<\/cachedUntil>/
       headers.merge!('Content-Length' => data.length.to_s)
 
       # return an HTTP 200 and proxy the request with a cache header

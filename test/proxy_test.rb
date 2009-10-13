@@ -28,6 +28,7 @@ class ProxyTest < Test::Unit::TestCase
     assert last_response.ok?
     assert last_response.headers.include? 'Cache-Control'
     assert last_response.headers['Cache-Control'] =~ /max-age=(\d+)/
+    assert Time.parse( last_response.headers['Expires'] ) > Time.now
     assert last_response.headers['Age'].to_i < $1.to_i
   end
   
@@ -65,5 +66,17 @@ class ProxyTest < Test::Unit::TestCase
     assert doc.search("/error/message").inner_text =~ /Bad Request/
     assert last_response.headers['Cache-Control'].eql? 'private'
     assert last_response.headers.include?('Age').eql? false
+  end
+  
+  def test_api_call_parameter_ordering
+    userid = '12345'
+    apikey = 'xxxxxxxxxxxxxxxx'
+    sessions = []
+    sessions <<  Rack::Test::Session.new( Rack::MockSession.new( app ) )
+    sessions[0].get "/account/Characters.xml.aspx?apikey=#{apikey}&userid=#{userid}"
+    sessions <<  Rack::Test::Session.new( Rack::MockSession.new( app ) )
+    sessions[1].get "/account/Characters.xml.aspx?userid=#{userid}&apikey=#{apikey}"
+    assert sessions[0].last_response.headers['X-Content-Digest'].eql? sessions[1].last_response.headers['X-Content-Digest']
+    assert sessions[0].last_request.env['QUERY_STRING'].eql? sessions[1].last_request.env['QUERY_STRING']
   end
 end
