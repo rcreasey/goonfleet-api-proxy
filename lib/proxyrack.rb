@@ -2,7 +2,6 @@ require 'rubygems'
 require 'yaml'
 require 'curb'
 require 'builder'
-require 'hpricot'
 require 'rack'
 require 'rack/cache'
 
@@ -29,14 +28,7 @@ class ProxyRack
       [200, headers, data]
     else
       # return an HTTP 400 error if request isn't valid
-      builder = Builder::XmlMarkup.new
-      error = builder.error do |b| 
-                b.message('Bad Request')
-                b.request( env['PATH_INFO'] )
-                b.query( env['QUERY_STRING'] ) unless env['QUERY_STRING'].nil?
-              end
-              
-      [400, {'Content-Type' => 'text/xml'}, error]
+      [400, {'Content-Type' => 'text/xml'}, error_message('Bad Request', env['PATH_INFO'], env['QUERY_STRING'])]
     end
   end
   
@@ -65,6 +57,14 @@ class ProxyRack
     
     # curl from remote host
     Curl::Easy.perform( url ).body_str
+  end
+  
+  def error_message( message, request, query = nil )
+    error = Builder::XmlMarkup.new.error do |b| 
+              b.message( message )
+              b.request( request )
+              b.query( query ) unless query.nil?
+            end
   end
   
 end

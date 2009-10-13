@@ -4,7 +4,6 @@ require 'ruby-debug'
 require 'test/unit'
 require 'rack/test'
 require 'hpricot'
-require 'pp'
 
 FileUtils.rm_rf %w(test_cache/meta test_cache/body)
 
